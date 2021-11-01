@@ -72,6 +72,12 @@ string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST
 // ** Need the reservedwords table to be set up here.                                                                         
 // ** Do not require any file input for this. Hard code the table.                                                            
 // ** a.out should work without any additional files.
+string reservedwords[19][2] = {{"masu", "VERB"}, {"masen", "VERBENG"}, {"mashita", "VERBPAST"}, {"masendeshita", "VERBPASTENG"}, {"desu", "IS"}, {"deshita", "WAS"}, {"o", "OBJECT"}, {"wa", "SUBJECT"}, {"ni", "DESTINATION"}, {"watashi", "PRONOUN"}, {"anata", "PRONOUN"}, {"kare", "PRONOUN"}, {"kanojo", "PRONOUN"}, {"sore", "PRONOUN"}, {"mata", "CONNECTOR"}, {"soshite", "CONNECTOR"}, {"shikashi", "CONNECTOR"}, {"dakara", "CONNECTOR"}, {"eofm", "EOFM"}};
+
+// ** Need the reservedwords table to be set up here.
+// ** Do not require any file input for this. Hard code the table.                                                            
+// ** a.out should work without any additional files.
+
 
 
 // ------------ Scaner and Driver -----------------------                                                                     
