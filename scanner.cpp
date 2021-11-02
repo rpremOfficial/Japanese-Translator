@@ -12,7 +12,7 @@ using namespace std;
 // --------- Two DFAs ---------------------------------                                                                       
 
 // WORD DFA                                                                                                                   
-// Done by: Robert Paud                                                                                                               
+// Done by: Robert Paud, Sam Cooke                                                                                                               
 /* RE:   (vowel | vowel n | consonant vowel | consonant vowel n |
     consonant-pair vowel | consonant-pair vowel n)^+ */         
                                                                                                                    
