@@ -291,51 +291,39 @@ ifstream fin;  // global stream for reading from the input file
 // ** Done by: Daniel B. Martinez                                                                                             
 int scanner(tokentype& tt, string& w)
 {
-  // variables                                                                                                                
+  // variables                                                                                                                                                                       
   bool reserve = false;
 
   cout << "\n.....Scanner was called.....\n";
 
-  // ** Grab the next word from the file via fin                                                                              
+  // ** Grab the next word from the file via fin                                                                                                                                     
   fin >> w;
 
-  // 1. If it is eofm, return right now.                                                                                      
+  // 1. If it is eofm, return right now.                                                                                                                                             
   if(w == "eofm")
     {
       return EOFM;
     }
 
-  // check the words, if not found in reservedwords table.                                                                    
-  // words must be WORD1 or WORD2                                                                                             
-  else if(!reserve)
+  // call the period function, check to see if period after the word                                                                                                                 
+  if(period(w))
     {
-      // test cases                                                                                                           
-      if(w[w.size() - 1] == 'I' || w[w.size() - 1] == 'E')
-        {
-          // E ending will be WORD2                                                                                           
-          tt = WORD2;
-        }
-
-      else
-        {
-          // I ending will be WORD1                                                                                           
-          tt = WORD1;
-        }
+      tt = PERIOD;
     }
 
-  // call the token funcion word to test cases                                                                                
+  // call the token funcion word to test cases                                                                                                                                       
   else if(word(w))
     {
-      /*                                                                                                                      
-        loop through the words that was hardcoded in the above                                                                
-        string reservewords table that was written. Loop through                                                              
-        all nineteen words.                                                                                                   
+      /*                                                                                                                                                                             
+        loop through the words that was hardcoded in the above                                                                                                                       
+        string reservewords table that was written. Loop through                                                                                                                     
+        all nineteen words.                                                                                                                                                          
       */
       for(int i = 0; i < 19; i++)
         {
-          if(w == reservedwords[i][0])
+           if(w == reservedwords[i][0])
             {
-              // w was found to be reserved, assign the correct token type                                                    
+              // w was found to be reserved, assign the correct token type                                                                                                           
               if(reservedwords[i][1] == "VERB")
                 {
                   tt = VERB;
@@ -370,8 +358,8 @@ int scanner(tokentype& tt, string& w)
                 {
                   tt = OBJECT;
                 }
-
-              else if(reservedwords[i][1] == "SUBJECT")
+            
+                else if(reservedwords[i][1] == "SUBJECT")
                 {
                   tt = SUBJECT;
                 }
@@ -393,31 +381,42 @@ int scanner(tokentype& tt, string& w)
 
               else if(reservedwords[i][1] == "EOFM")
                 {
-                  tt = EOFM;
+                   tt = EOFM;
                 }
 
               reserve = true;
               break;
 
-            }//endif                                                                                                          
-        }//endloop                                                                                                            
+            }//endif                                                                                                                                     
+        }//endloop                                                                                                                                       
 
+      // check the words, if not found in reservedwords table.                                                                                           
+      // words must be WORD1 or WORD2                                                                                                                    
+      if(!reserve)
+        {
+          // test cases                                                                                                                                  
+          if(w[w.size() - 1] == 'I' || w[w.size() - 1] == 'E')
+            {
+              // E ending will be WORD2                                                                                                                  
+              tt = WORD2;
+            }
+
+          else
+            {
+              // I ending will be WORD1                                                                                                                  
+              tt = WORD1;
+            }
+          
+          }
     }
 
-    // call the period function, check to see if period after the word                                                          
-  else if(period(w))
-    {
-      tt = PERIOD;
-    }
-
-  // no token type has been found so throw a lexical error,                                                                   
-  // both DFA's fail. tokentype is to be an ERROR.                                                                            
+  // no token type has been found so throw a lexical error,                                                                                              
+  // both DFA's fail. tokentype is to be an ERROR.                                                                                                       
   else
     {
       cout << "\nLexical error: " << w << " is not a valid token\n";
       tt = ERROR;
     }
-
   /*  **                                                                                                                      
   2. Call the token functions (word and period)                                                                               
      one after another (if-then-else).                                                                                        
