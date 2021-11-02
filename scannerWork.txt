@@ -1,0 +1,24 @@
+Fill this out and submit this with the executable.
+
+Group#: 16
+
+1.      Indicate who did what by giving names.
+Must have divided the work as specified by the assignment
+sheet. If the member did not fully contribute to the assigned part,
+do not list his/her name!!!!!
+o       Member A tasks(DFA, tables, scanner)- who: Daniel, Robert
+o       Member B tasks(DFA, tables, scanner)- who: Jeffrey, Sam   
+o       Member C tasks(word, period)- who: Robert, Jeffrey
+
+2.     Who came to the meeting to test everything together? Daniel, Robert, Jeffery, Sam
+
+3.     You have included all the required comments? (RE and Done By): Robert, Sam
+
+4.     Your program works correctly on scannertest1 and scannertest2? Yes
+
+5.     Any other remarks.
+       We have learned that the more time we dedicate, the better results we see. \
+       Collaboration is good skill to apply when it comes to work in teams.
+
+
+checkIt_LK in 24 hours and immediately correct and re-submit.
