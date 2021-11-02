@@ -29,28 +29,62 @@ bool word (string s)
           switch(s[charpos])
           {//vowels
             case 'a':
+                state = 1;
+                  break;
             case 'e':
+                state = 1;
+                  break;
             case 'i':
+                state = 1;
+                  break;
             case 'o':
+                state = 1;
+                  break;
             case 'u':
+                state = 1;
+                  break;
             case 'I':
+                state = 1;
+                  break;
             case 'E':
               state = 1; //q0q1
               break;
             case 'd':
+                state = 2;
+                break;
             case 'w':
+                state = 2;
+                break;
             case 'z':
+                state = 2;
+                break;
             case 'y':
+                state = 2;
+                break;
             case 'j':
               state = 2; //qsa
               break;
             case 'b':
+                state = 3;
+                break;
             case 'g':
+                state = 3;
+                break;
             case 'h':
+                state = 3;
+                break;
             case 'k':
+                state = 3;
+                break;
             case 'm':
+                state = 3;
+                break;
             case 'n':
+                state = 3;
+                break;
             case 'p':
+                state = 3;
+                break;
             case 'r':
               state = 3; //qy
               break;
@@ -73,27 +107,59 @@ bool word (string s)
           switch(s[charpos])
           {
             case 'a':
+                state = 1; //q0q1
+                break;
             case 'e':
+                state = 1; //q0q1
+                break;
             case 'i':
+                state = 1; //q0q1
+                break;
             case 'o':
+                state = 1; //q0q1
+                break;
             case 'u':
+                state = 1; //q0q1
+                break;
             case 'I':
+                state = 1; //q0q1
+                break;
             case 'E':
               state = 1; //q0q1
               break;
             case 'd':
+                state = 2;
+                break;
             case 'w':
+                state = 2;
+                break;
             case 'z':
+                state = 2;
+                break;
             case 'y':
+                state = 2;
+                break;
             case 'j':
               state = 2; //qsa
               break;
             case 'b':
+                state = 3;
+                break;
             case 'g':
+                state = 3;
+                break;
             case 'h':
+                state = 3;
+                break;
             case 'k':
+                state = 3;
+                break;
             case 'm':
+                state = 3;
+                break;
             case 'p':
+                state = 3;
+                break;
             case 'r':
               state = 3; //qy
               break;
@@ -103,6 +169,12 @@ bool word (string s)
             case 'n':
               state = 7; //q0qy
               break;
+              case 's':
+                  state = 5;
+                  break;
+              case 't':
+                  state = 4;
+                  break;
             default:
               return(false);
           }
@@ -112,11 +184,23 @@ bool word (string s)
           switch(s[charpos])
           {
             case 'a':
+                state = 1;
+                break;
             case 'e':
+                state = 1;
+                break;
             case 'i':
+                state = 1;
+                break;
             case 'o':
+                state = 1;
+                break;
             case 'u':
+                state = 1;
+                break;
             case 'I':
+                state = 1;
+                break;
             case 'E':
               state = 1; //q0q1
               break;
@@ -129,11 +213,23 @@ bool word (string s)
           switch(s[charpos])
           {
             case 'a':
+                state = 1;
+                break;
             case 'e':
+                state = 1;
+                break;
             case 'i':
+                state = 1;
+                break;
             case 'o':
+                state = 1;
+                break;
             case 'u':
+                state = 1;
+                break;
             case 'I':
+                state = 1;
+                break;
             case 'E':
               state = 1; //q0q1
               break;
@@ -149,11 +245,23 @@ bool word (string s)
           switch(s[charpos])
           {
             case 'a':
+                state = 1;
+                break;
             case 'e':
+                state = 1;
+                break;
             case 'i':
+                state = 1;
+                break;
             case 'o':
+                state = 1;
+                break;
             case 'u':
+                state = 1;
+                break;
             case 'I':
+                state = 1;
+                break;
             case 'E':
               state = 1; //q0q1
               break;
@@ -169,11 +277,23 @@ bool word (string s)
           switch(s[charpos])
           {
             case 'a':
+                state = 1;
+                break;
             case 'e':
+                state = 1;
+                break;
             case 'i':
+                state = 1;
+                break;
             case 'o':
+                state = 1;
+                break;
             case 'u':
+                state = 1;
+                break;
             case 'I':
+                state = 1;
+                break;
             case 'E':
               state = 1; //q0q1
               break;
@@ -194,28 +314,62 @@ bool word (string s)
           switch(s[charpos])
           {
             case 'a':
+                state = 1;
+                break;
             case 'e':
+                state = 1;
+                break;
             case 'i':
+                state = 1;
+                break;
             case 'o':
+                state = 1;
+                break;
             case 'u':
+                state = 1;
+                break;
             case 'I':
+                state = 1;
+                break;
             case 'E':
               state = 1; //q0q1
               break;
             case 'd':
+                state = 2;
+                break;
             case 'w':
+                state = 2;
+                break;
             case 'z':
+                state = 2;
+                break;
             case 'y':
+                state = 2;
+                break;
             case 'j':
               state = 2; //qsa
               break;
             case 'b':
+                state = 3;
+                break;
             case 'g':
+                state = 3;
+                break;
             case 'h':
+                state = 3;
+                break;
             case 'k':
+                state = 3;
+                break;
             case 'm':
+                state = 3;
+                break;
             case 'n':
+                state = 3;
+                break;
             case 'p':
+                state = 3;
+                break;
             case 'r':
               state = 3; //qy
               break;
@@ -274,7 +428,7 @@ string tokenName[30] = {"WORD1", "WORD2", "PERIOD", "VERB", "VERBNEG", "VERBPAST
 // ** Need the reservedwords table to be set up here.                                                                         
 // ** Do not require any file input for this. Hard code the table.                                                            
 // ** a.out should work without any additional files.
-string reservedwords[19][2] = {{"masu", "VERB"}, {"masen", "VERBENG"}, {"mashita", "VERBPAST"}, {"masendeshita", "VERBPASTENG"}, {"desu", "IS"}, {"deshita", "WAS"}, {"o", "OBJECT"}, {"wa", "SUBJECT"}, {"ni", "DESTINATION"}, {"watashi", "PRONOUN"}, {"anata", "PRONOUN"}, {"kare", "PRONOUN"}, {"kanojo", "PRONOUN"}, {"sore", "PRONOUN"}, {"mata", "CONNECTOR"}, {"soshite", "CONNECTOR"}, {"shikashi", "CONNECTOR"}, {"dakara", "CONNECTOR"}, {"eofm", "EOFM"}};
+string reservedwords[19][2] = {{"masu", "VERB"}, {"masen", "VERBNEG"}, {"mashita", "VERBPAST"}, {"masendeshita", "VERBPASTNEG"}, {"desu", "IS"}, {"deshita", "WAS"}, {"o", "OBJECT"}, {"wa", "SUBJECT"}, {"ni", "DESTINATION"}, {"watashi", "PRONOUN"}, {"anata", "PRONOUN"}, {"kare", "PRONOUN"}, {"kanojo", "PRONOUN"}, {"sore", "PRONOUN"}, {"mata", "CONNECTOR"}, {"soshite", "CONNECTOR"}, {"shikashi", "CONNECTOR"}, {"dakara", "CONNECTOR"}, {"eofm", "EOFM"}};
 
 // ** Need the reservedwords table to be set up here.
 // ** Do not require any file input for this. Hard code the table.                                                            
