@@ -12,8 +12,10 @@ using namespace std;
 // --------- Two DFAs ---------------------------------                                                                       
 
 // WORD DFA                                                                                                                   
-// Done by: **                                                                                                                
-// RE:   **                                                                                                                   
+// Done by: Robert Paud                                                                                                               
+/* RE:   (vowel | vowel n | consonant vowel | consonant vowel n |
+    consonant-pair vowel | consonant-pair vowel n)^+ */         
+                                                                                                                   
 bool word (string s)
 {
 
@@ -22,21 +24,221 @@ bool word (string s)
   /* replace the following todo the word dfa  */
   while (s[charpos] != '\0')
     {
-      if (state == 0 && s[charpos] == 'a')
-        state = 1;
-      else
-        if (state == 1 && s[charpos] == 'b')
-          state = 2;
-        else
-          if (state == 2 && s[charpos] == 'b')
+      if (state == 0)
+        {
+          switch(s[charpos])
+          {//vowels
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            case 'd':
+            case 'w':
+            case 'z':
+            case 'y':
+            case 'j':
+              state = 2; //qsa
+              break;
+            case 'b':
+            case 'g':
+            case 'h':
+            case 'k':
+            case 'm':
+            case 'n':
+            case 'p':
+            case 'r':
+              state = 3; //qy
+              break;
+            case 't':
+              state = 4; //qt
+              break;
+            case 's':
+              state = 5; //qs
+              break;
+            case 'c':
+              state = 6; //qc
+              break;
+            default:
+              return(false);
+          }
+
+        }
+      else if (state == 1) //q0q1
+        {
+          switch(s[charpos])
+          {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            case 'd':
+            case 'w':
+            case 'z':
+            case 'y':
+            case 'j':
+              state = 2; //qsa
+              break;
+            case 'b':
+            case 'g':
+            case 'h':
+            case 'k':
+            case 'm':
+            case 'p':
+            case 'r':
+              state = 3; //qy
+              break;
+            case 'c':
+              state = 6; //qc
+              break;
+            case 'n':
+              state = 7; //q0qy
+              break;
+            default:
+              return(false);
+          }
+        }
+      else if (state == 2) //qsa
+        {
+          switch(s[charpos])
+          {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            default:
+              return(false);
+          }
+        }
+      else if (state == 3) //qy
+        { 
+          switch(s[charpos])
+          {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            case 'y':
+              state = 2; //qsa
+              break;        
+            default:
+              return(false);
+          }
+        }
+      else if (state == 4) //qt
+        {
+          switch(s[charpos])
+          {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            case 's':
+              state = 2; //qsa
+              break;
+            default:
+              return(false);
+          }
+        }
+      else if (state == 5) //qs
+        {
+          switch(s[charpos])
+          {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            case 'h':
+              state = 2; //qsa
+              break;
+            default:
+              return(false);
+          }
+        }
+      else if (state == 6) //qc
+        {
+          if(s[charpos] == 'h')
             state = 2;
+        }
+      else if (state == 7) //q0qy
+        {
+          switch(s[charpos])
+          {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'I':
+            case 'E':
+              state = 1; //q0q1
+              break;
+            case 'd':
+            case 'w':
+            case 'z':
+            case 'y':
+            case 'j':
+              state = 2; //qsa
+              break;
+            case 'b':
+            case 'g':
+            case 'h':
+            case 'k':
+            case 'm':
+            case 'n':
+            case 'p':
+            case 'r':
+              state = 3; //qy
+              break;
+            case 't':
+              state = 4; //qt
+              break;
+            case 's':
+              state = 5; //qs
+              break;
+            case 'c':
+              state = 6; //qc
+              break;
+            default:
+              return(false);
+          }
+        }
           else
             return(false);
       charpos++;
     }//end of while                                                                                                           
 
   // where did I end up????                                                                                                   
-  if (state == 2) return(true);  // end in a final state                                                                      
+  if (state == 0 || state == 1 || state == 7) return(true);  // end in a final state                                                                      
   else return(false);
 }
 
