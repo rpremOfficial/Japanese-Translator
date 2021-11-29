@@ -1,6 +1,6 @@
 Fill this out and submitIt_LK this file with the executable.
 
-Group#:
+Group#: 16
 
 Must have divided the work as specified.
 If the member did not fully contribute to the assigned part, do not list his/her name!
@@ -13,7 +13,7 @@ If the member did not fully contribute to the assigned part, do not list his/her
   functions             who
   ----------------      ----------
 
-2.  Who came to the meeting to test the program together?
+2.  Who came to the meeting to test the program together? All members
 
 3.  You have included all the required comments? 
     (Grammer: and Done by: )
