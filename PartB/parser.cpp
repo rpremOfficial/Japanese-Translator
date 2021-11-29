@@ -22,8 +22,11 @@ using namespace std;
 //    to display syntax error messages as specified by me.  
 
 // Type of error: **
-// Done by: ** 
-void syntaxerror1(  ){    }
+// Done by: Jeffrey Lu
+void syntaxerror1(tokentype token, string str ) {  
+   cout << "\nSYNTAX ERROR: expected " << token << " but found " << str << endl;
+   }
+
 // Type of error: **
 // Done by: ** 
 void syntaxerror2(  ) {    }
@@ -53,7 +56,7 @@ string filename;
 //----------- Driver ---------------------------
 
 // The new test driver to start the parser
-// Done by:  **
+// Done by:  Jeffery Lu
 int main()
 {
   cout << "Enter the input file name: ";
@@ -62,7 +65,9 @@ int main()
 
   //** calls the <story> to start parsing
   //** closes the input file 
-
+  story();
+  fin.close();
+   
 }// end
 //** require no other input files!
 //** syntax error EC requires producing errors.txt of error messages
