@@ -9,22 +9,34 @@ If the member did not fully contribute to the assigned part, do not list his/her
   Member A tasks (syntax error functions) - who: Jeffrey Lu
   Member B tasks (match and next_token)- who: Daniel/Robert
   Member C tasks (main()) who: Jeffery Lu
-  Who wrote which parser functions? Sam Cooke
+  Who wrote which parser functions?
   functions             who
   ----------------      ----------
-
+  tense()               Sam Cooke
+  be()                  Sam Cooke
+  verb()                Sam Cooke
+  noun()                Sam Cooke
+  afterObject()         Sam Cooke
+  afterNoun()           Sam Cooke
+  afterSubject()        Robert Paud
+  s()                   Daniel Martinez
+  story()               Jeffery Lu
 
 2.  Who came to the meeting to test the program together? All members
 
 3.  You have included all the required comments? 
     (Grammer: and Done by: )
+    All comments included and done by everyone.
 
 4.  The parser produced correct output for 
     all 6 test cases?
+    Yes.
 
 5.  What extra credit feature did you include?
     If it is error correction, did you make sure errors.txt
     got produced?
     [ You may still do EC later ]
+    
+     We inlcuded the syntax error and added the turn on/off error tracing messages.
         
 checkIt_LK in 24 hours and immediately correct and resubmit.
