@@ -6,12 +6,13 @@ Must have divided the work as specified.
 If the member did not fully contribute to the assigned part, do not list his/her name!
 
 1.State who did what by indicating: 
-  Member A tasks (syntax error functions) - who:
-  Member B tasks (match and next_token)- who:
-  Member C tasks (main()) who:
-  Who wrote which parser functions? 
+  Member A tasks (syntax error functions) - who: Jeffrey Lu
+  Member B tasks (match and next_token)- who: Daniel/Robert
+  Member C tasks (main()) who: Jeffery Lu
+  Who wrote which parser functions? Sam Cooke
   functions             who
   ----------------      ----------
+
 
 2.  Who came to the meeting to test the program together? All members
 
