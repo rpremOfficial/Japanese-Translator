@@ -313,7 +313,7 @@ void noun()
 // Grammar: <afterObject> ::= <noun> #getEword# DESTINATION #gen("TO")# <verb> #getEword#                                                                
 //                            #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | <verb>                                                                     
 //                            #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD                                                                   
-// Done by: 
+// Done by: Robert Paud
 void after_object()
 {
   cout << "Processing <afterObject>\n";
@@ -322,24 +322,24 @@ void after_object()
     {
     case WORD1:
     case PRONOUN:
-      noun();
-      getEword();
+      noun(); //calls noun function
+      getEword(); //calls getEword function
       match(DESTINATION);
-      gen("TO");
-      verb();
-      getEword();
-      gen("ACTION");
-      tense();
-      gen("TENSE");
+      gen("TO"); //call added
+      verb(); //calls verb function 
+      getEword(); //calls getEword function
+      gen("ACTION"); //call added
+      tense(); //calls tense function
+      gen("TENSE"); //call added
       match(PERIOD);
       break;
 
     case WORD2:
-      verb();
-      getEword();
-      gen("ACTION");
-      tense();
-      gen("TENSE");
+      verb(); //calls verb function
+      getEword(); //calls getEword function
+      gen("ACTION"); //call added
+      tense(); //calls tense function
+      gen("TENSE"); //call added
       match(PERIOD);
       break;
 
@@ -351,7 +351,7 @@ void after_object()
 // Grammar: <afterNoun> ::= <be> #gen("DESCRIPTION")# #gen("TENSE") PERIOD | DESTINATION #gen("TO")                                                      
 //                          <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | OBJECT                                                     
 //                          #gen("OBJECT")# <afterObject>                                                                                                
-// Done by:  
+// Done by:  Robert Paud
 void after_noun()
 {
   cout << "Processing <afterNoun>\n";
@@ -359,26 +359,26 @@ void after_noun()
   switch(next_token())
     {
     case IS: case WAS:
-      be();
-      gen("DESCRIPTION");
-      gen("TENSE");
+      be(); //calls be function
+      gen("DESCRIPTION"); //call added
+      gen("TENSE"); //call added
       match(PERIOD);
       break;
 
     case DESTINATION:
       match(DESTINATION);
-      gen("TO");
-      verb();
-      getEword();
-      gen("ACTION");
-      tense();
-      gen("TENSE");
+      gen("TO"); //call added
+      verb(); //calls verb function
+      getEword(); //calls getEword function
+      gen("ACTION"); //call added
+      tense(); //calls tense function
+      gen("TENSE"); //call added
       match(PERIOD);
       break;
 
     case OBJECT:
       match(OBJECT);
-      gen("OBJECT");
+      gen("OBJECT"); //call added
       after_object();
       break;
 
@@ -389,7 +389,7 @@ void after_noun()
 
 // Grammar: <afterSubject> ::= <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")#                                                                  
 //                             PERIOD | <noun> #getEword# <afterNoun>                                                                                    
-// Done by:                                                                                                                                              
+// Done by: Robert Paud                                                                                                                                              
 void after_subject()
 {
   cout << "Processing <afterSubject>\n";
@@ -397,18 +397,18 @@ void after_subject()
   switch(next_token())
     {
     case WORD2:
-      verb();
-      getEword();
-      gen("ACTION");
-      tense();
-      gen("TENSE");
+      verb(); //calls verb function
+      getEword(); //calls getEword function
+      gen("ACTION"); //call added
+      tense(); //calls tense function
+      gen("TENSE"); //call added
       match(PERIOD);
       break;
 
     case WORD1:
     case PRONOUN:
-      noun();
-      getEword();
+      noun(); //calls noun function
+      getEword(); //calls getEword function
       after_noun();
       break;
 
@@ -419,7 +419,7 @@ void after_subject()
 
 // Grammar: <s> ::= [CONNECTOR] #getEword# #gen("CONNECTOR")# <noun> #getEword#                                                                          
 //                   SUBJECT #gen("ACTOR")# <afterSubject>                                                                                               
-// Done by:                                                                                                                                              
+// Done by:   Robert Paud                                                                                                                                           
 void s()
 {
   cout << "Processing <s>\n";
@@ -428,20 +428,20 @@ void s()
     {
     case CONNECTOR:
       match(CONNECTOR);
-      getEword();
-      gen("CONNECTOR");
-      noun();
-      getEword();
+      getEword(); //calls getEword function
+      gen("CONNECTOR"); //call added
+      noun(); //calls noun function
+      getEword(); //calls getEword function
       match(SUBJECT);
-      gen("ACTOR");
+      gen("ACTOR"); //call added
       after_subject();
       break;
 
     default:
-      noun();
-      getEword();
+      noun(); //calls noun function
+      getEword(); //calls getEword function
       match(SUBJECT);
-      gen("ACTOR");
+      gen("ACTOR"); //call added
       after_subject();
       break;
     }
@@ -482,9 +482,7 @@ int main()
   cout << "Enter the input file name: ";
   cin >> filename;
   fin.open(filename.c_str());
-
-  //** closes the input file                                                                                                                             
-  //** closes traslated.txt                                                                                                                              
+                                                                                                                             
   cout << "Do you want to trace error messages? (y or n)";
   cin >> user_choice;
 
