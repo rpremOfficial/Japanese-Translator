@@ -45,7 +45,6 @@ using namespace std;
 // ** Each non-terminal function should be calling
 //    getEword and/or gen now.
 
-
 string saved_lexeme;
 string saved_E_word;
 tokentype saved_token;
