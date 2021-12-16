@@ -60,12 +60,12 @@ string parserName[30] = {"story", "s", "after_subject", "after_noun", "after_obj
 //    to display syntax error messages as specified by me.  
 
 // Type of error: Match fails.
-// Done by: William Cerros 
+// Done by: 
 void syntaxerror1(tokentype expected){
     cout << "\nSYNTAX ERROR: expected " << tokenName[expected] << " but found " << saved_lexeme << endl;
 }
 // Type of error: Switch default
-// Done by: William Cerros 
+// Done by:  
 void syntaxerror2(parser_function function) {
     cout << "\nSYNTAX ERROR: unexpected " << saved_lexeme << " found in " << parserName[function] << endl;
     exit(1);
@@ -74,7 +74,7 @@ void syntaxerror2(parser_function function) {
 // ** Declare Lexicon (i.e. dictionary) that will hold the content of lexicon.txt
 // Make sure it is easy and fast to look up the translation.
 // Do not change the format or content of lexicon.txt 
-//  Done by: William Cerros
+//  Done by:
 
 //Map will serve as our look up table
 map<string, string> lexicon_dictionary;
@@ -132,7 +132,7 @@ void build_dictionary() {
 //    getEword() - using the current saved_lexeme, look up the English word
 //                 in Lexicon if it is there -- save the result   
 //                 in saved_E_word
-//  Done by: Peter Sharp 
+//  Done by: 
 void getEword() {
 
     for (map<string, string>::const_iterator it = lexicon_dictionary.begin();it != lexicon_dictionary.end(); ++it)
@@ -149,7 +149,7 @@ void getEword() {
 //    gen(line_type) - using the line type,
 //                     sends a line of an IR to translated.txt
 //                     (saved_E_word or saved_token is used)
-//  Done by: Howard Tep
+//  Done by: 
 void gen(string token) {
 
     if (token == "TENSE") {
@@ -163,7 +163,7 @@ void gen(string token) {
 // saved_token and saved_lexeme
 
 // Purpose: Checks what token comes next from scanner.
-// Done by: Howard Tep
+// Done by: 
 tokentype next_token() {
 
     if (!token_available) {
@@ -174,7 +174,7 @@ tokentype next_token() {
 }
 
 // Purpose: Checks if expected token is different from next_token()
-// Done by: Howard Tep
+// Done by: 
 bool match(tokentype expected) {
 
     if (next_token() != expected) {
@@ -205,7 +205,7 @@ bool match(tokentype expected) {
 // ** Be sure to put the name of the programmer above each function
 
 // Grammar: <tense> ::= VERBPAST | VERBPASTNEG | VERB | VERBNEG
-// Done by: Peter Sharp
+// Done by: 
 void tense() {
 
     cout << "Processing <tense>\n";
@@ -229,7 +229,7 @@ void tense() {
 }
 
 // Grammar: <be> ::= IS | WAS
-// Done by: Peter Sharp
+// Done by:
 void be() {
 
     cout << "Processing <be>\n";
@@ -247,7 +247,7 @@ void be() {
 }
 
 // Grammar: <verb> ::= WORD2
-// Done by: Howard Tep
+// Done by: 
 void verb() {
 
     cout << "Processing <verb>\n";
@@ -255,7 +255,7 @@ void verb() {
 }
 
 // Grammar: <noun> ::= WORD1 | PRONOUN 
-// Done by: Howard Tep
+// Done by: 
 void noun() {
 
     cout << "Processing <noun>\n";
@@ -275,7 +275,7 @@ void noun() {
 // Grammar: <afterObject> ::= <noun> #getEword# DESTINATION #gen("TO")# <verb> #getEword#
 //                            #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | <verb> 
 //                            #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD 
-// Done by: William Cerros
+// Done by: 
 void after_object() {
 
     cout << "Processing <afterObject>\n";
@@ -309,7 +309,7 @@ void after_object() {
 // Grammar: <afterNoun> ::= <be> #gen("DESCRIPTION")# #gen("TENSE") PERIOD | DESTINATION #gen("TO") 
 //                          <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | OBJECT
 //                          #gen("OBJECT")# <afterObject>
-// Done by: William Cerros
+// Done by: 
 void after_noun() {
 
     cout << "Processing <afterNoun>\n";
@@ -343,7 +343,7 @@ void after_noun() {
 
 // Grammar: <afterSubject> ::= <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")# 
 //                             PERIOD | <noun> #getEword# <afterNoun> 
-// Done by: Howard Tep
+// Done by: 
 void after_subject() {
 
     cout << "Processing <afterSubject>\n";
@@ -370,7 +370,7 @@ void after_subject() {
 
 // Grammar: <s> ::= [CONNECTOR] #getEword# #gen("CONNECTOR")# <noun> #getEword# 
 //                   SUBJECT #gen("ACTOR")# <afterSubject>
-// Done by: Peter Sharp
+// Done by: 
 void s() {
 
     cout << "Processing <s>\n";
@@ -397,7 +397,7 @@ void s() {
 }
 
 // Grammar: <story> ::= <s> { <s> }
-// Done by: William Cerros
+// Done by: 
 void story() {
 
     cout << "Processing <story>\n";
@@ -415,7 +415,7 @@ void story() {
 // ---------------- Driver ---------------------------
 
 // The final test driver to start the translator
-// Done by:  **
+// Done by: 
 int main()
 {
   //** opens the lexicon.txt file and reads it into Lexicon
