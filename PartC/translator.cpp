@@ -275,7 +275,7 @@ void noun() {
 // Grammar: <afterObject> ::= <noun> #getEword# DESTINATION #gen("TO")# <verb> #getEword#
 //                            #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | <verb> 
 //                            #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD 
-// Done by: William Cerros
+// Done by: Robert Paud
 void after_object() {
 
     cout << "Processing <afterObject>\n";
@@ -309,7 +309,7 @@ void after_object() {
 // Grammar: <afterNoun> ::= <be> #gen("DESCRIPTION")# #gen("TENSE") PERIOD | DESTINATION #gen("TO") 
 //                          <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")# PERIOD | OBJECT
 //                          #gen("OBJECT")# <afterObject>
-// Done by: William Cerros
+// Done by: Robert Paud
 void after_noun() {
 
     cout << "Processing <afterNoun>\n";
@@ -343,7 +343,7 @@ void after_noun() {
 
 // Grammar: <afterSubject> ::= <verb> #getEword# #gen("ACTION")# <tense> #gen("TENSE")# 
 //                             PERIOD | <noun> #getEword# <afterNoun> 
-// Done by: Howard Tep
+// Done by: Robert Paud
 void after_subject() {
 
     cout << "Processing <afterSubject>\n";
@@ -370,7 +370,7 @@ void after_subject() {
 
 // Grammar: <s> ::= [CONNECTOR] #getEword# #gen("CONNECTOR")# <noun> #getEword# 
 //                   SUBJECT #gen("ACTOR")# <afterSubject>
-// Done by: Peter Sharp
+// Done by: Robert Paud
 void s() {
 
     cout << "Processing <s>\n";
@@ -397,7 +397,7 @@ void s() {
 }
 
 // Grammar: <story> ::= <s> { <s> }
-// Done by: William Cerros
+// Done by: Robert Paud
 void story() {
 
     cout << "Processing <story>\n";
@@ -430,10 +430,6 @@ int main()
   cin >> filename;
   fin.open(filename.c_str());
 
-  //** calls the <story> to start parsing
-
-  //** closes the input file 
-  //** closes traslated.txt
   cout << "Do you want to trace error messages? (y or n)";
   cin >> user_choice;
     
